@@ -77,18 +77,4 @@ def QuickSort(L):
 		L = QuickSort(newL[:pIndex])+[newL[pIndex]]+QuickSort(newL[pIndex+1:])
 	return L
 
-"""
-main
-"""
-if __name__ == '__main__':
-	A = [1,5,6.3,2,3,9.001,8,7.8,4,10]
-	B = [-1,5,-6,2,3,-9,8,7,4,10]
-	C = [1,5,5,5,5,5,5,4,4,6]
-	print(QuickSort(A))
-	print(QuickSort(B))
-	print(QuickSort(C))
-
-	print(MergeSort(A))
-	print(MergeSort(B))
-	print(MergeSort(C))
-
+	
