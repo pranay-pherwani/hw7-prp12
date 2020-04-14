@@ -44,12 +44,27 @@ partition: the helper function for QuickSort that partitions the input
 		   list L based on the value of the pivot at L[p].
 """
 def partition(L, p):
+	newL = [0]*len(L)
+	i = 0
+	j = len(L)-1
+
+	for k in L:
+		if k<L[p]:
+			newL[i] = k
+			i+=1
+		else:
+			newL[j]=k
+			j-=1
+
 	return (newL, i)
 
 """
 QuickSort
 """
 def QuickSort(L):
+	if len(L)>1:
+		(newL, pIndex) = partition(L,-1)
+		L = QuickSort(newL[:pIndex])+QuickSort(newL[pIndex:])
 	return L
 
 """
@@ -57,5 +72,5 @@ main
 """
 if __name__ == '__main__':
 	A = [1,5,6,2,3,9,8,7,4,10]
-	print(MergeSort(A))
+	print(QuickSort(A))
 
